@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Container from "./UI/Container";
-import Logo from "./images/mylogo.png";
+import Header from "./components/Header";
 import Hero from "./images/parallax-hero-bg.png";
 import Hero1 from "./images/parallax-hero-bg-1.png";
 import AboutImage from "./images/about-us-image.jpg";
@@ -11,54 +11,14 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";
-
-
+import AboutMe from "./components/AboutMe";
 
 function App() {
   return (
     <Fragment>
-      <header>
-        <nav>
-          <Container>
-            <div className="relative flex items-center justify-between h-24">
-              <div className="flex-1 flex items-center justify-center">
-                <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block h-16 w-auto invert z-10"
-                    src={Logo}
-                    alt="Workflow"
-                  />
-                </div>
-              </div>
-            </div>
-          </Container>
-        </nav>
-      </header>
-
-      <section className="theme-gradient-3 pb-0">
-        <div
-          className="absolute left-0 bottom-0 top-0 right-0 bg-no-repeat bg-cover"
-          style={{ backgroundImage: `url(${Hero})` }}
-        ></div>
-        <div className="relative z-10">
-          <Container>
-            <div className="flex flex-col items-center justify-center py-20">
-              <h1 className="text-7xl mb-4 text-white">Hi, I'm Benjoe —</h1>
-              <p className="text-5xl font-light text-white mb-14">
-                a Full Stack Web Developer
-              </p>
-              <p className="text-white font-light text-2xl mb-10 text-center w-1/2 leading-9">
-                “I think everyone makes a mistake at least once in their life.
-                The important thing is what you learn from it.”
-              </p>
-              <button class="theme-gradient-2 px-7 py-4 rounded-lg text-white font-bold uppercase">
-                Download CV
-              </button>
-            </div>
-          </Container>
-        </div>
-        <div className="bottom-divider"></div>
-      </section>
+      <Header/>
+      <AboutMe/>
+      
 
       <section className="bg-black">
         <div>
