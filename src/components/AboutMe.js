@@ -1,31 +1,47 @@
-import Hero from "./../images/parallax-hero-bg.png";
-import Container from "./../UI/Container";
+import AboutImage from "./../images/about-us-image.jpg";
+import Container from "../UI/Container";
+import SectionRibbonTitle from "../UI/SectionRibbonTitle";
 
 const AboutMe = (props) => {
   return (
-    <section className="theme-gradient-3 pb-0">
-      <div
-        className="absolute left-0 bottom-0 top-0 right-0 bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(${Hero})` }}
-      ></div>
-      <div className="relative z-10">
+    <section id="about-me" className="bg-black pb-0">
+      <div>
         <Container>
-          <div className="flex flex-col items-center justify-center py-20">
-            <h1 className="text-7xl mb-4 text-white">Hi, I'm Benjoe —</h1>
-            <p className="text-5xl font-light text-white mb-14">
-              a Full Stack Web Developer
-            </p>
-            <p className="text-white font-light text-2xl mb-10 text-center w-1/2 leading-9">
-              “I think everyone makes a mistake at least once in their life. The
-              important thing is what you learn from it.”
-            </p>
-            <button class="theme-gradient-2 px-7 py-4 rounded-lg text-white font-bold uppercase">
-              Download CV
-            </button>
+          {/* <div class="grid grid-cols-2 w-full gap-10 relative z-30">
+            <div class="flex flex-col justify-center pr-20">
+              <h3 className="text-2xl mb-4 text-neutral-300 text-green font-normal uppercase">About Me</h3>
+							<h2 className="text-5xl mb-4 text-neutral-300 leading-[3.5rem]">Better design,<br/> Better Experience</h2>
+
+              <p className="font-light text-2xl mb-10  w-1/8 leading-9 text-neutral-400">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+            </div>
+            <div className="relative">
+              <img src={AboutImage} className="rounded-3xl shadow-lg" />
+              <div className="absolute w-full h-full -top-12 -left-12 rounded-3xl theme-gradient-2 -z-10"></div>
+            </div>
+          </div> */}
+          <div class="flex flex-col items-center justify-center pr-20 pb-16">
+            <SectionRibbonTitle className="theme-gradient-5">About me</SectionRibbonTitle>
+            <h2 className="text-5xl mb-5 text-white">Lorem ipsum dolor sit amet</h2>
+
+            <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-9/12 leading-7">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
           </div>
         </Container>
+        <div className="bottom-divider-diagonal"></div>
       </div>
-      <div className="bottom-divider"></div>
     </section>
   );
 };

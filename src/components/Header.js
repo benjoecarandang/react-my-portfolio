@@ -7,7 +7,7 @@ const Header = () => {
       <nav>
         <Container>
           <div className="relative flex items-center justify-between h-24">
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 flex items-center justify-stretch">
               <div className="flex-shrink-0 flex items-center">
                 <img
                   className="block h-16 w-auto invert z-10"

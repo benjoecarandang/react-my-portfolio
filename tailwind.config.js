@@ -11,7 +11,8 @@ module.exports = {
         skyblue: '#69cad1',
         pink: '#fe9192',
         black: '#19181f',
-        black1: '#23202a'
+        black1: '#23202a',
+        black2: '#1E1B24'
       }
     },
   },
