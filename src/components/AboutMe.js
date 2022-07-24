@@ -1,6 +1,5 @@
-import AboutImage from "./../images/about-us-image.jpg";
 import Container from "../UI/Container";
-import SectionRibbonTitle from "../UI/SectionRibbonTitle";
+import SectionHeadings from "./SectionHeadings";
 
 const AboutMe = (props) => {
   return (
@@ -26,19 +25,16 @@ const AboutMe = (props) => {
               <div className="absolute w-full h-full -top-12 -left-12 rounded-3xl theme-gradient-2 -z-10"></div>
             </div>
           </div> */}
-          <div class="flex flex-col items-center justify-center pr-20 pb-16">
-            <SectionRibbonTitle className="theme-gradient-5">About me</SectionRibbonTitle>
-            <h2 className="text-5xl mb-5 text-white">Lorem ipsum dolor sit amet</h2>
-
-            <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-9/12 leading-7">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
+          <SectionHeadings
+            tagline="About me"
+            title="Lorem ipsum dolor sit amet"
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-          </div>
+                electronic typesetting, remaining essentially unchanged."
+          />
         </Container>
         <div className="bottom-divider-diagonal"></div>
       </div>

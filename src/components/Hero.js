@@ -1,7 +1,8 @@
-import HeroBG from "./../images/parallax-hero-bg.png";
 import Container from "../UI/Container";
 import { Fragment } from "react";
 import SectionRibbonTitle from "../UI/SectionRibbonTitle";
+import AboutImage from "./../images/about-us-image.jpg";
+import Shape from "./../images/half-horizontal.svg"
 
 const AboutMe = (props) => {
   return (
@@ -36,26 +37,32 @@ const AboutMe = (props) => {
         <div className="bottom-divider"></div>
       </section> */}
 
-      <section className="mx-16 rounded-2xl bg-black1">
+      <section className="mx-16 rounded-2xl bg-black1 bg-right bg-no-repeat h-full bg-cover shadow-lg" style={{ backgroundImage: `url(${Shape})` }}>
         <div>
           <Container>
-            <div className="flex flex-col items-start justify-center py-20">
-              <SectionRibbonTitle>Welcome</SectionRibbonTitle>
-              <h1 className="text-6xl mb-2 text-white">I'm Benjoe —</h1>
-              <p className="text-4xl font-light text-white mb-10">
-                a Full Stack Web Developer
-              </p>
-              <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-1/2 leading-7">
-                “I think everyone makes a mistake at least once in their life.
-                The important thing is what you learn from it.”
-              </p>
-              <div className="flex gap-4">
-                <button className="w-48 bg-white px-7 py-4 rounded-full text-black font-bold shadow-sm">
-                  Download CV
-                </button>
-                <button className="w-48 bg-black px-7 py-4 rounded-full text-white font-bold shadow-sm">
-                  <a href="#about-me">Learn More</a>
-                </button>
+            <div class="flex">
+              <div className="flex flex-col items-start justify-center py-20 basis-1/2">
+                <SectionRibbonTitle>Welcome</SectionRibbonTitle>
+                <h1 className="text-6xl mb-2 text-white">I'm Benjoe —</h1>
+                <p className="text-4xl font-light text-white mb-10">
+                  a Full Stack Web Developer
+                </p>
+                <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-8/12 leading-7">
+                  “I think everyone makes a mistake at least once in their life.
+                  The important thing is what you learn from it.”
+                </p>
+                <div className="flex gap-4">
+                  <button className="w-48 bg-white px-7 py-4 rounded-full text-black font-bold shadow-sm">
+                    Download CV
+                  </button>
+                  <button className="w-48 bg-black px-7 py-4 rounded-full text-white font-bold shadow-sm">
+                    <a href="#about-me">Learn More</a>
+                  </button>
+                </div>
+              </div>
+              <div className="flex items-center justify-center relative basis-1/2">
+                <img src={AboutImage} className="rounded-3xl shadow-lg" />
+                <div className="absolute w-full h-full -top-12 -left-12 rounded-3xl theme-gradient-2 -z-10"></div>
               </div>
             </div>
           </Container>
