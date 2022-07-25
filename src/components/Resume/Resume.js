@@ -1,4 +1,3 @@
-import SectionRibbonTitle from "../../UI/SectionRibbonTitle";
 import ResumeExperiences from "./ResumeExperiences";
 import Container from "../../UI/Container";
 import SectionHeadings from "../SectionHeadings";
@@ -49,7 +48,7 @@ const Resume = (props) => {
         />
 
         <div class="pt-12 relative">
-          <span className="lg:left-1/2 bg-neutral-300 w-[1px] h-full block left-2 top-0 absolute"></span>
+          <span className="lg:left-1/2 bg-neutral-400 w-[1px] h-full block left-2 top-0 absolute"></span>
           <div className="flex flex-wrap -mx-4">{resumeElements}</div>
         </div>
       </Container>

@@ -9,23 +9,43 @@ const data = [
       "An electron app that capture screenshots, mouse and keyboard clicks, and determines user productivity.",
     tags: ["Electron", "jQuery", "HTML", "CSS"],
     imageSrc:
-      "https://s3.us-east-2.amazonaws.com/resources.diversifyoss.com/2022/07/DSSvBaJo-p3-1.png",
+      "https://pbs.twimg.com/media/FYguXiNUIAIDeTj?format=png&name=medium",
+    gradientProperty: "linear-gradient(45deg, #3c97fe 0%, #673ab7 100%)",
+    repoLink: "",
+    websiteLnk: "",
   },
   {
-    title: "Aymazing!",
+    title: "Meme Generator",
     description:
-      "An electron app that capture screenshots, mouse and keyboard clicks, and determines user productivity.",
-    tags: ["Electron", "jQuery", "HTML", "CSS"],
+      "A simple tool to create memes on the fly.",
+    tags: ["React", "HTML", "CSS"],
     imageSrc:
-      "https://s3.us-east-2.amazonaws.com/resources.diversifyoss.com/2022/07/DSSvBaJo-p3-1.png",
+      "https://pbs.twimg.com/media/FYg8_0sUYAAWvjA?format=jpg&name=small",
+    gradientProperty: "linear-gradient(45deg, rgb(78 147 60) 0%, rgb(255, 251, 125) 100%)",
+    repoLink: "",
+    websiteLnk: "",
   },
   {
-    title: "Virtuallio Time Tracker",
+    title: "Tenzies",
     description:
-      "An electron app that capture screenshots, mouse and keyboard clicks, and determines user productivity.",
-    tags: ["Electron", "jQuery", "HTML", "CSS"],
+      "A simple game that rolls the dice until all dice are the same.",
+    tags: ["React", "HTML", "CSS"],
     imageSrc:
-      "https://s3.us-east-2.amazonaws.com/resources.diversifyoss.com/2022/07/DSSvBaJo-p3-1.png",
+      "https://pbs.twimg.com/media/FYhFPnPUYAAMlYe?format=jpg&name=900x900",
+    gradientProperty: "linear-gradient(45deg, rgb(108 197 205) 0%, rgb(9 153 244) 100%)",
+    repoLink: "",
+    websiteLnk: "",
+  },
+  {
+    title: "MyDiversify App",
+    description:
+      "An electron app that connects into MyDiversify API. It captures mouse and keyboard clicks and record task and breaks activities.",
+    tags: ["Electron", "Restful API", "HTML", "CSS"],
+    imageSrc:
+      "https://pbs.twimg.com/media/FYhkmvxUYAE1XNL?format=png&name=900x900",
+    gradientProperty: "linear-gradient(45deg, rgb(117 91 165) 0%, rgb(121 180 206) 100%)",
+    repoLink: "",
+    websiteLnk: "",
   },
 ];
 
@@ -37,6 +57,7 @@ const portfolioElements = data.map((item) => (
       title={item.title}
       description={item.description}
       tags={item.tags}
+      gradientProperty={item.gradientProperty}
     />
   </div>
 ));
@@ -44,40 +65,17 @@ const portfolioElements = data.map((item) => (
 const Portfolio = (props) => {
   return (
     <section className="bg-black1 py-0">
-      {/* <div
-        className="absolute left-0 bottom-0 top-0 right-0 bg-no-repeat bg-cover transform-3d"
-        style={{ backgroundImage: `url(${Hero1})` }}
-      ></div>
-      <div className="top-divider-1"></div> */}
       <Container>
-        {/* <div className="my-36 relative z-10">
-          <h3 className="text-2xl mb-4 text-neutral-300 text-green text-center font-normal uppercase">
-            What I offer?
-          </h3>
-          <h2 className="text-5xl mb-16 text-neutral-300 leading-[3.5rem] text-center">
-            Check out some of my work
-          </h2>
-
-          {data.length > 0 && (
-            <div className="flex flex-wrap">{portfolioElements}</div>
-          )}
-        </div> */}
-
         <SectionHeadings
-          className="items-start text-left"
+          className="items-center lg:items-start text-center lg:text-left"
           tagline="What I offer?"
           title="Check out some of my work"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged."
+          description="A small gallery of recent projects I've worked with. Some of the projects are done all together with amazing people from different companies around the globe."
           gradientClass="theme-gradient-6"
         />
 
         {data.length > 0 && (
-          <div className="flex flex-wrap mb-20">{portfolioElements}</div>
+          <div className="flex flex-wrap mb-20 -mx-4">{portfolioElements}</div>
         )}
       </Container>
       <div className="bottom-divider-r-diagonal"></div>

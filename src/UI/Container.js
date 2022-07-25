@@ -7,7 +7,7 @@ const Container = props => {
 }
 
 const StyledContainer = styled.div(
-    tw`max-w-7xl mx-auto px-2 sm:px-6 lg:px-8`
+    tw`max-w-7xl mx-auto px-6 md:px-8 lg:px-8`
 )
 
 export default Container

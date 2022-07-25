@@ -16,6 +16,10 @@
     @apply bg-black;
   }
 
+  p {
+    @apply text-neutral-400 font-medium text-base leading-7;
+  }
+
   .theme-gradient-1 {
     background-image: linear-gradient(130deg,#8624E1 25%,#3607A6 100%)!important;
   }

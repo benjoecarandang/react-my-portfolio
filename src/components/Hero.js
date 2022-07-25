@@ -1,74 +1,43 @@
 import Container from "../UI/Container";
-import { Fragment } from "react";
 import SectionRibbonTitle from "../UI/SectionRibbonTitle";
-import AboutImage from "./../images/about-us-image.jpg";
-import Shape from "./../images/half-horizontal.svg"
+import HeroPic from "./../images/about-us-image.jpg";
+import Shape from "./../images/half-horizontal.svg";
 
 const AboutMe = (props) => {
   return (
-    <Fragment>
-      {/* <section className="theme-gradient-3 pb-0">
-        <div
-          className="absolute left-0 bottom-0 top-0 right-0 bg-no-repeat bg-cover"
-          style={{ backgroundImage: `url(${HeroBG})` }}
-        ></div>
-        <div className="relative z-10">
-          <Container>
-            <div className="flex flex-col items-center justify-center py-20">
-              <h1 className="text-7xl mb-4 text-white">Hi, I'm Benjoe —</h1>
-              <p className="text-5xl font-light text-white mb-14">
+    <section
+      className="mx-4 md:mx-8 lg:mx-16 rounded-2xl bg-black1 bg-center bg-no-repeat h-full bg-cover shadow-lg"
+      style={{ backgroundImage: `url(${Shape})` }}
+    >
+      <div>
+        <Container>
+          <div class="flex flex-wrap">
+            <div className="flex flex-col items-center lg:items-start items-start justify-center py-14 basis-full md:basis-full lg:basis-1/2 w-full">
+              <SectionRibbonTitle>Hey There 👋 I am</SectionRibbonTitle>
+              <h1 className="text-5xl mb-2 text-white font-semibold">Benjoe —</h1>
+              <p className="text-3xl font-light text-white mb-10">
                 a Full Stack Web Developer
               </p>
-              <p className="text-white font-light text-2xl mb-10 text-center w-1/2 leading-9">
+              <p className="mb-10 text-center lg:text-left w-full md:w-8/12 leading-7">
                 “I think everyone makes a mistake at least once in their life.
                 The important thing is what you learn from it.”
               </p>
-              <div className="flex gap-10">
-                <button className="w-48 bg-gradient-to-br from-green to-red hover:bg-gradient-to-bl px-7 py-4 rounded-full text-white font-bold uppercase shadow-sm">
+              <div className="flex gap-4">
+                <button className="w-40 bg-white px-7 py-3 rounded-full text-black font-bold shadow-lg hover:bg-neutral-100 transition-all">
                   Download CV
                 </button>
-                <button className="w-48 bg-gradient-to-br bg-neutral-100 text-black1 hover:bg-gradient-to-bl px-7 py-4 rounded-full text-white font-bold uppercase shadow-sm">
+                <button className="w-40 bg-black px-7 py-3 rounded-full text-white font-bold shadow-lg hover:bg-black2 transition-all">
                   <a href="#about-me">Learn More</a>
                 </button>
               </div>
             </div>
-          </Container>
-        </div>
-        <div className="bottom-divider"></div>
-      </section> */}
-
-      <section className="mx-16 rounded-2xl bg-black1 bg-right bg-no-repeat h-full bg-cover shadow-lg" style={{ backgroundImage: `url(${Shape})` }}>
-        <div>
-          <Container>
-            <div class="flex">
-              <div className="flex flex-col items-start justify-center py-20 basis-1/2">
-                <SectionRibbonTitle>Welcome</SectionRibbonTitle>
-                <h1 className="text-6xl mb-2 text-white">I'm Benjoe —</h1>
-                <p className="text-4xl font-light text-white mb-10">
-                  a Full Stack Web Developer
-                </p>
-                <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-8/12 leading-7">
-                  “I think everyone makes a mistake at least once in their life.
-                  The important thing is what you learn from it.”
-                </p>
-                <div className="flex gap-4">
-                  <button className="w-48 bg-white px-7 py-4 rounded-full text-black font-bold shadow-sm">
-                    Download CV
-                  </button>
-                  <button className="w-48 bg-black px-7 py-4 rounded-full text-white font-bold shadow-sm">
-                    <a href="#about-me">Learn More</a>
-                  </button>
-                </div>
-              </div>
-              <div className="flex items-center justify-center relative basis-1/2">
-                <img src={AboutImage} className="rounded-3xl shadow-lg" />
-                <div className="absolute w-full h-full -top-12 -left-12 rounded-3xl theme-gradient-2 -z-10"></div>
-              </div>
+            <div className="flex relative items-center justify-center basis-full md:basis-full lg:basis-1/2">
+              <img src={HeroPic} className="rounded-3xl w-full max-w-md lg:max-w-full shadow-lg" />
             </div>
-          </Container>
-        </div>
-      </section>
-    </Fragment>
+          </div>
+        </Container>
+      </div>
+    </section>
   );
 };
 

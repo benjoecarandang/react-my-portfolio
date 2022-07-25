@@ -10,7 +10,7 @@ const SectionHeadings = (props) => {
       <h2 className="text-5xl mb-5 text-white">{props.title}</h2>
 
       {props.description && (
-        <p className="text-neutral-300 font-normal text-[1.25rem] mb-10 w-full lg:w-8/12 leading-7 px-2">
+        <p className="mb-10 w-full lg:w-8/12 leading-7">
           {props.description}
         </p>
       )}
