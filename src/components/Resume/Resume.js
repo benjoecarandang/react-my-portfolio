@@ -1,42 +1,54 @@
+import { useState, useEffect } from "react";
 import ResumeExperiences from "./ResumeExperiences";
 import Container from "../../UI/Container";
 import SectionHeadings from "../SectionHeadings";
-
-const data = [
-  {
-    position: "left",
-    jobDescription: "Fullstack Web Developer",
-    companyName: "Diversify Offshoring Staffing Solutions",
-    from: "2019",
-    to: "Present",
-  },
-  {
-    position: "right",
-    jobDescription: "Fullstack Web Developer",
-    companyName: "Enra Innovations",
-    from: "2017",
-    to: "2019",
-  },
-  {
-    position: "left",
-    jobDescription: "Fullstack Web Developer",
-    companyName: "Portal Integrators",
-    from: "2016",
-    to: "2017",
-  },
-];
-
-const resumeElements = data.map((item) => (
-  <ResumeExperiences
-    position={item.position}
-    jobDescription={item.jobDescription}
-    companyName={item.companyName}
-    from={item.from}
-    to={item.to}
-  ></ResumeExperiences>
-));
-
 const Resume = (props) => {
+  const [resumeItems, setResumeItems] = useState([]);
+
+  useEffect(() => {
+    const getResume = async () => {
+      const response = await fetch(
+        "https://my-portfolio-a7eb9-default-rtdb.firebaseio.com/resume.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const data = await response.json();
+
+      let resumeArray = [];
+
+      for (const key in data) {
+        resumeArray.push({
+          id: key,
+          position: data[key].position,
+          jobDescription: data[key].jobDescription,
+          companyName: data[key].companyName,
+          from: data[key].from,
+          to: data[key].to
+        });
+      }
+
+      setResumeItems(resumeArray);
+    };
+
+    getResume().catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  const resumeElements = resumeItems.map((item) => (
+    <ResumeExperiences
+      key={item.id}
+      position={item.position}
+      jobDescription={item.jobDescription}
+      companyName={item.companyName}
+      from={item.from}
+      to={item.to}
+    ></ResumeExperiences>
+  ));
+
   return (
     <section className="bg-black">
       <Container>
@@ -47,7 +59,7 @@ const Resume = (props) => {
             the majority have suffered alteration in some form."
         />
 
-        <div class="pt-12 relative">
+        <div className="pt-12 relative">
           <span className="lg:left-1/2 bg-neutral-400 w-[1px] h-full block left-2 top-0 absolute"></span>
           <div className="flex flex-wrap -mx-4">{resumeElements}</div>
         </div>

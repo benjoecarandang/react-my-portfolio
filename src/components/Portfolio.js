@@ -1,68 +1,61 @@
 import Container from "../UI/Container";
 import Card from "../UI/Card";
 import SectionHeadings from "./SectionHeadings";
-
-const data = [
-  {
-    title: "Virtuallio Time Tracker",
-    description:
-      "An electron app that capture screenshots, mouse and keyboard clicks, and determines user productivity.",
-    tags: ["Electron", "jQuery", "HTML", "CSS"],
-    imageSrc:
-      "https://pbs.twimg.com/media/FYguXiNUIAIDeTj?format=png&name=medium",
-    gradientProperty: "linear-gradient(45deg, #3c97fe 0%, #673ab7 100%)",
-    repoLink: "",
-    websiteLnk: "",
-  },
-  {
-    title: "Meme Generator",
-    description:
-      "A simple tool to create memes on the fly.",
-    tags: ["React", "HTML", "CSS"],
-    imageSrc:
-      "https://pbs.twimg.com/media/FYg8_0sUYAAWvjA?format=jpg&name=small",
-    gradientProperty: "linear-gradient(45deg, rgb(78 147 60) 0%, rgb(255, 251, 125) 100%)",
-    repoLink: "",
-    websiteLnk: "",
-  },
-  {
-    title: "Tenzies",
-    description:
-      "A simple game that rolls the dice until all dice are the same.",
-    tags: ["React", "HTML", "CSS"],
-    imageSrc:
-      "https://pbs.twimg.com/media/FYhFPnPUYAAMlYe?format=jpg&name=900x900",
-    gradientProperty: "linear-gradient(45deg, rgb(108 197 205) 0%, rgb(9 153 244) 100%)",
-    repoLink: "",
-    websiteLnk: "",
-  },
-  {
-    title: "MyDiversify App",
-    description:
-      "An electron app that connects into MyDiversify API. It captures mouse and keyboard clicks and record task and breaks activities.",
-    tags: ["Electron", "Restful API", "HTML", "CSS"],
-    imageSrc:
-      "https://pbs.twimg.com/media/FYhkmvxUYAE1XNL?format=png&name=900x900",
-    gradientProperty: "linear-gradient(45deg, rgb(117 91 165) 0%, rgb(121 180 206) 100%)",
-    repoLink: "",
-    websiteLnk: "",
-  },
-];
-
-const portfolioElements = data.map((item) => (
-  <div className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4">
-    <Card
-      className=""
-      imageSrc={item.imageSrc}
-      title={item.title}
-      description={item.description}
-      tags={item.tags}
-      gradientProperty={item.gradientProperty}
-    />
-  </div>
-));
+import { useEffect, useState } from "react";
 
 const Portfolio = (props) => {
+  const [portfolioItems, setPortfolioItems] = useState([]);
+
+  useEffect(() => {
+    const portfolio = async () => {
+      const response = await fetch(
+        "https://my-portfolio-a7eb9-default-rtdb.firebaseio.com/projects.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const data = await response.json();
+
+      let portfolioArray = [];
+
+      for (const key in data) {
+        portfolioArray.push({
+          id: key,
+          title: data[key].title,
+          description: data[key].description,
+          imageSrc: data[key].imageSrc,
+          tags: data[key].tags,
+          websiteLink: data[key].websiteLink,
+          repoLink: data[key].repoLink,
+          gradientProperty: data[key].gradientProperty
+        });
+      }
+
+      setPortfolioItems(portfolioArray);
+    };
+
+    portfolio().catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  const portfolioElements = portfolioItems.map((item) => (
+    <div key={item.id} className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4">
+      <Card
+        id={item.id}
+        className=""
+        imageSrc={item.imageSrc}
+        title={item.title}
+        description={item.description}
+        tags={item.tags}
+        gradientProperty={item.gradientProperty}
+      />
+    </div>
+  ));
+
+
   return (
     <section className="bg-black1 py-0">
       <Container>
@@ -74,8 +67,12 @@ const Portfolio = (props) => {
           gradientClass="theme-gradient-6"
         />
 
-        {data.length > 0 && (
-          <div className="flex flex-wrap mb-20 -mx-4">{portfolioElements}</div>
+        {portfolioItems.length > 0 && (
+          <div className="flex flex-wrap mb-10 -mx-4">{portfolioElements}</div>
+        )}
+
+        {portfolioItems.length === 0 && (
+          <p>No data to display.</p>
         )}
       </Container>
       <div className="bottom-divider-r-diagonal"></div>

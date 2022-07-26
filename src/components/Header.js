@@ -3,7 +3,7 @@ import Container from "./../UI/Container";
 
 const Header = () => {
   return (
-    <header className="mx-16">
+    <header className="mx-4">
       <nav>
         <Container>
           <div className="relative flex items-center justify-between h-24">

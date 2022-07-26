@@ -19,7 +19,7 @@ const ResumeExperiences = (props) => {
           <h3 className="text-neutral-100 font-bold text-xl mb-1">
             {props.jobDescription}
           </h3>
-          <p className="text-neutral-400 font-semibold mb-3 text-base leading-6">
+          <p className="text-neutral-400 font-medium mb-3 text-base leading-6">
             {props.companyName}
           </p>
           <p className="text-black bg-black-300 px-4 py-1 font-bold text-sm leading-6 bg-neutral-100 rounded-full inline-flex mb-5">

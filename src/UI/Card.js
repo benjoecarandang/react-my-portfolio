@@ -1,8 +1,7 @@
 const Card = (props) => {
-  console.log(props);
   return (
     <div
-      className={`rounded-lg mb-14 bg-white shadow-lg ${props.className} max-w-none md:max-w-full sm:max-w-[80%]`}
+      key={props.id} className={`rounded-lg mb-14 bg-white shadow-lg ${props.className} w-full max-w-none md:max-w-full sm:max-w-[80%]`}
     >
       <div className="flex flex-col h-full">
         <div
@@ -22,8 +21,8 @@ const Card = (props) => {
         </div>
         <div className="px-6 pt-4 pb-2 mt-auto">
           {props.tags &&
-            props.tags.map((item) => (
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+            props.tags.map((item, key) => (
+              <span key={key} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                 {item}
               </span>
             ))}

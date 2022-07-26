@@ -3,7 +3,7 @@ import SectionRibbonTitle from "../UI/SectionRibbonTitle";
 
 const SectionHeadings = (props) => {
   return (
-    <div class={twMerge(`flex flex-col items-center justify-center mb-10 text-center ${props.className}`)}>
+    <div className={twMerge(`flex flex-col items-center justify-center mb-10 text-center ${props.className}`)}>
       <SectionRibbonTitle className={twMerge(`theme-gradient-5 ${props.gradientClass}`)}>
         {props.tagline}
       </SectionRibbonTitle>
