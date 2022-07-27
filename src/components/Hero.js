@@ -2,7 +2,7 @@ import Container from "../UI/Container";
 import SectionRibbonTitle from "../UI/SectionRibbonTitle";
 import HeroPic from "./../images/about-us-image.jpg";
 import Shape from "./../images/BotShape.svg";
-import CV from "./../CV.docx"
+import CV from "./../CV.pdf"
 
 const AboutMe = (props) => {
   function scrollTo() {
