@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import ResumeExperiences from "./ResumeExperiences";
 import Container from "../../UI/Container";
 import SectionHeadings from "../SectionHeadings";
+import tw, { styled } from "twin.macro";
+
 const Resume = (props) => {
   const [resumeItems, setResumeItems] = useState([]);
 
@@ -26,7 +28,7 @@ const Resume = (props) => {
           jobDescription: data[key].jobDescription,
           companyName: data[key].companyName,
           from: data[key].from,
-          to: data[key].to
+          to: data[key].to,
         });
       }
 
@@ -37,6 +39,8 @@ const Resume = (props) => {
       console.log(error);
     });
   }, []);
+
+  console.log(resumeItems);
 
   const resumeElements = resumeItems.map((item) => (
     <ResumeExperiences
@@ -55,17 +59,20 @@ const Resume = (props) => {
         <SectionHeadings
           tagline="Education & Experience"
           title="My Resume"
-          description="There are many variations of passages of Lorem Ipsum available but
-            the majority have suffered alteration in some form."
+          description="Full Stack Web developer with 6+ years of hands-on experience in designing, developing, and implementing applications and solutions using range of technologies and programming languages. I'm seeking to leverage broad development experience and hands-on technical expertise in a challenging role as a Full Stack Developer."
         />
 
         <div className="pt-12 relative">
-          <span className="lg:left-1/2 bg-neutral-400 w-[1px] h-full block left-2 top-0 absolute"></span>
+          <StyledLine />
           <div className="flex flex-wrap -mx-4">{resumeElements}</div>
         </div>
       </Container>
     </section>
   );
 };
+
+const StyledLine = styled.span(
+  tw`bg-gray-200 h-full block absolute left-2 top-0 w-[1px] lg:left-1/2`
+);
 
 export default Resume;

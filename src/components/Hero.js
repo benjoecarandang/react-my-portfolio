@@ -5,6 +5,12 @@ import Shape from "./../images/BotShape.svg";
 import CV from "./../CV.docx"
 
 const AboutMe = (props) => {
+  function scrollTo() {
+    document.getElementById('about-me').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+
   return (
     <section
       className="mx-4 md:mx-8 lg:mx-16 rounded-2xl bg-black1 bg-right bg-no-repeat h-full bg-cover shadow-lg"
@@ -20,20 +26,19 @@ const AboutMe = (props) => {
                 a Full Stack Web Developer
               </p>
               <p className="mb-10 text-center md:text-left w-full md:w-11/12 lg:w-8/12 leading-7">
-                “I think everyone makes a mistake at least once in their life.
-                The important thing is what you learn from it.”
+                “I want to make things that make a difference.”
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="w-40 bg-white px-7 py-3 rounded-full text-black font-bold shadow-lg hover:bg-neutral-100 transition-all">
                   <a href={CV} download>Download CV</a>
                 </button>
                 <button className="w-40 bg-black px-7 py-3 rounded-full text-white font-bold shadow-lg hover:bg-black2 transition-all">
-                  <a href="#about-me">Learn More</a>
+                  <a href="#about-me" onClick={scrollTo}>Learn More</a>
                 </button>
               </div>
             </div>
             <div className="flex relative items-center justify-center md:pl-2 basis-full md:basis-5/12">
-              <img src={HeroPic} className="rounded-3xl w-full max-w-md md:max-w-full shadow-lg" />
+              <img src={HeroPic} className="rounded-3xl w-full max-w-md md:max-w-full shadow-lg" alt="" />
             </div>
           </div>
         </Container>

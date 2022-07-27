@@ -51,6 +51,8 @@ const Portfolio = (props) => {
         description={item.description}
         tags={item.tags}
         gradientProperty={item.gradientProperty}
+        repoLink={item.repoLink}
+        websiteLink={item.websiteLink}
       />
     </div>
   ));
@@ -64,7 +66,7 @@ const Portfolio = (props) => {
           tagline="What I offer?"
           title="Check out some of my work"
           description="A small gallery of recent projects I've worked with. Some of the projects are done all together with amazing people from different companies around the globe."
-          gradientClass="theme-gradient-6"
+          gradientClass="theme-gradient-2"
         />
 
         {portfolioItems.length > 0 && (
