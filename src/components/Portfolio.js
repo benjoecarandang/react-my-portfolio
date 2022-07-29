@@ -65,7 +65,7 @@ const Portfolio = (props) => {
           className="items-center lg:items-start text-center lg:text-left"
           tagline="What I offer?"
           title="Check out some of my work"
-          description="A small gallery of recent projects I've worked with. Some of the projects are done all together with amazing people from different companies around the globe."
+          description="A small gallery of recent projects I've worked with. Some of the projects were done all together with amazing people from different companies around the globe."
           gradientClass="theme-gradient-2"
         />
 
