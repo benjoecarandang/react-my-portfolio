@@ -26,9 +26,9 @@ const AboutMe = (props) => {
                 a Full Stack Web Developer
               </p>
               <p className="mb-10 text-center md:text-left w-full md:w-11/12 lg:w-8/12 leading-7">
-                “I want to make things that make a difference.”
+                “I want to build things that will make a positive difference.”
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex justify-center flex-wrap gap-4">
                 <button className="w-40 bg-white px-7 py-3 rounded-full text-black font-bold shadow-lg hover:bg-neutral-100 transition-all">
                   <a href={CV} download>Download CV</a>
                 </button>

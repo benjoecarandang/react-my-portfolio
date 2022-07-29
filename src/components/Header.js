@@ -10,7 +10,7 @@ const Header = () => {
             <div className="flex-1 flex items-center justify-stretch">
               <div className="flex-shrink-0 flex justify-between items-center w-full">
                 <img
-                  className="block h-16 w-auto invert z-10 animate-[spin_5s_ease-in-out_infinite]"
+                  className="block h-14 md:h-16 w-auto invert z-10 animate-[spin_5s_ease-in-out_infinite]"
                   src={Logo}
                   alt="Workflow"
                 />
