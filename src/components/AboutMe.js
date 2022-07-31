@@ -15,7 +15,7 @@ const AboutMe = (props) => {
         Random facts: When I'm not pushing pixels, you'll find me playing my guitar, Petting my cat and dog and spending time with my nieces.
       </p>
 
-      <p class="text-left text-lg italic font-bold text-neutral-200 tracking-wide">~ “I may not know anything, but I will never stop learning.”</p>
+      <p className="text-left text-lg italic font-bold text-neutral-200 tracking-wide">~ “I may not know anything, but I will never stop learning.”</p>
     </>
   );
 
