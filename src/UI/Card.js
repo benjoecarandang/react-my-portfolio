@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   //const hasLink = props.websiteLink || props.repoLink;
-
   return (
     <div
       key={props.id}
