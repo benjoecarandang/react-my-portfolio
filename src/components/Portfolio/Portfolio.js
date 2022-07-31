@@ -1,6 +1,6 @@
-import Container from "../UI/Container";
-import Card from "../UI/Card";
-import SectionHeadings from "./SectionHeadings";
+import Container from "../../UI/Container";
+import Card from "../../UI/Card";
+import SectionHeadings from "../SectionHeadings";
 import { useEffect, useState } from "react";
 
 const Portfolio = (props) => {
@@ -29,7 +29,7 @@ const Portfolio = (props) => {
           tags: data[key].tags,
           websiteLink: data[key].websiteLink,
           repoLink: data[key].repoLink,
-          gradientProperty: data[key].gradientProperty
+          gradientProperty: data[key].gradientProperty,
         });
       }
 
@@ -42,7 +42,10 @@ const Portfolio = (props) => {
   }, []);
 
   const portfolioElements = portfolioItems.map((item) => (
-    <div key={item.id} className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4">
+    <div
+      key={item.id}
+      className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4"
+    >
       <Card
         id={item.id}
         className=""
@@ -57,7 +60,6 @@ const Portfolio = (props) => {
     </div>
   ));
 
-
   return (
     <section className="bg-black1 py-0">
       <Container>
@@ -66,16 +68,14 @@ const Portfolio = (props) => {
           tagline="What I offer?"
           title="Check out some of my work"
           description="A small gallery of recent projects I've worked with. Some of the projects were done all together with amazing people from different companies around the globe."
-          gradientClass="theme-gradient-2"
+          gradientclassName="theme-gradient-2"
         />
 
         {portfolioItems.length > 0 && (
           <div className="flex flex-wrap mb-10 -mx-4">{portfolioElements}</div>
         )}
 
-        {portfolioItems.length === 0 && (
-          <p>No data to display.</p>
-        )}
+        {portfolioItems.length === 0 && <p>No data to display.</p>}
       </Container>
       <div className="bottom-divider-r-diagonal"></div>
     </section>
