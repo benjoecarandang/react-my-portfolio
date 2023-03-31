@@ -1,4 +1,4 @@
-import Container from "../UI/Container";
+import {Container} from "../UI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -6,11 +6,11 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Shape from "./../images/half-horizontal.svg";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <footer>
       <div
-        className="mx-4 md:mx-8 rounded-2xl bg-black1 bg-center bg-no-repeat h-full bg-cover shadow-lg"
+        className="mx-4 md:mx-8 lg:mx-16 rounded-2xl bg-black1 bg-center bg-no-repeat h-full bg-cover shadow-lg mt-40"
         style={{ backgroundImage: `url(${Shape})` }}
       >
         <Container>

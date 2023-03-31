@@ -1,10 +1,9 @@
-import Container from "../UI/Container";
-import SectionRibbonTitle from "../UI/SectionRibbonTitle";
+import {SectionRibbonTitle, Container} from "../UI";
 import HeroPic from "./../images/about-us-image.jpg";
 import Shape from "./../images/BotShape.svg";
 import CV from "./../CV.pdf"
 
-const AboutMe = (props) => {
+const Hero = () => {
   function scrollTo() {
     document.getElementById('about-me').scrollIntoView({ 
       behavior: 'smooth' 
@@ -23,7 +22,7 @@ const AboutMe = (props) => {
               <SectionRibbonTitle>Hey There 👋 I am</SectionRibbonTitle>
               <h1 className="text-5xl mb-2 text-white font-semibold">Benjoe —</h1>
               <p className="text-2xl md:text-3xl font-light text-white mb-10 leading-10">
-                a Full Stack Web Developer
+                a Front-end Web Developer
               </p>
               <p className="mb-10 text-center md:text-left w-full md:w-11/12 lg:w-8/12 leading-7">
                 “I want to build things that will make a positive difference.”
@@ -47,4 +46,4 @@ const AboutMe = (props) => {
   );
 };
 
-export default AboutMe;
+export default Hero;

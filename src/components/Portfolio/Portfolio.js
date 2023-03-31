@@ -1,49 +1,14 @@
 import Container from "../../UI/Container";
 import Card from "../../UI/Card";
 import SectionHeadings from "../SectionHeadings";
-import { useEffect, useState } from "react";
+import { useAppContext } from "../context/app-context";
 
 const Portfolio = (props) => {
-  const [portfolioItems, setPortfolioItems] = useState([]);
+  const {portfolio} = useAppContext()
 
-  useEffect(() => {
-    const portfolio = async () => {
-      const response = await fetch(
-        "https://my-portfolio-a7eb9-default-rtdb.firebaseio.com/projects.json"
-      );
-
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
-
-      const data = await response.json();
-
-      let portfolioArray = [];
-
-      for (const key in data) {
-        portfolioArray.push({
-          id: key,
-          title: data[key].title,
-          description: data[key].description,
-          imageSrc: data[key].imageSrc,
-          tags: data[key].tags,
-          websiteLink: data[key].websiteLink,
-          repoLink: data[key].repoLink,
-          gradientProperty: data[key].gradientProperty,
-        });
-      }
-
-      setPortfolioItems(portfolioArray);
-    };
-
-    portfolio().catch((error) => {
-      console.log(error);
-    });
-  }, []);
-
-  const portfolioElements = portfolioItems.map((item) => (
+  const portfolioElements = portfolio.map((item, key) => (
     <div
-      key={item.id}
+      key={key}
       className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4"
     >
       <Card
@@ -71,11 +36,11 @@ const Portfolio = (props) => {
           gradientclassName="theme-gradient-2"
         />
 
-        {portfolioItems.length > 0 && (
+        {portfolio.length > 0 && (
           <div className="flex flex-wrap mb-10 -mx-4">{portfolioElements}</div>
         )}
 
-        {portfolioItems.length === 0 && <p>No data to display.</p>}
+        {portfolio.length === 0 && <p>No data to display.</p>}
       </Container>
       <div className="bottom-divider-r-diagonal"></div>
     </section>
