@@ -1,5 +1,5 @@
 import Logo from "./../images/logo-only.png";
-import Container from "./../UI/Container";
+import {Container} from "./../UI";
 
 const Header = () => {
   return (

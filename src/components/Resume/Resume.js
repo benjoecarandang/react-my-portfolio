@@ -1,60 +1,31 @@
-import { useState, useEffect } from "react";
 import ResumeExperiences from "./ResumeExperiences";
-import Container from "../../UI/Container";
+import { Container } from "../../UI";
 import SectionHeadings from "../SectionHeadings";
 import tw, { styled } from "twin.macro";
+import { useAppContext } from "../context/app-context";
 
-const Resume = (props) => {
-  const [resumeItems, setResumeItems] = useState([]);
+const Resume = () => {
+  const { resume } = useAppContext();
 
-  useEffect(() => {
-    const getResume = async () => {
-      const response = await fetch(
-        "https://my-portfolio-a7eb9-default-rtdb.firebaseio.com/resume.json"
-      );
-
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
-
-      const data = await response.json();
-
-      let resumeArray = [];
-
-      for (const key in data) {
-        resumeArray.push({
-          id: key,
-          position: data[key].position,
-          jobDescription: data[key].jobDescription,
-          companyName: data[key].companyName,
-          from: data[key].from,
-          to: data[key].to,
-        });
-      }
-
-      setResumeItems(resumeArray);
-    };
-
-    getResume().catch((error) => {
-      console.log(error);
-    });
-  }, []);
-
-  console.log(resumeItems);
-
-  const resumeElements = resumeItems.map((item) => (
-    <ResumeExperiences
-      key={item.id}
-      position={item.position}
-      jobDescription={item.jobDescription}
-      companyName={item.companyName}
-      from={item.from}
-      to={item.to}
-    ></ResumeExperiences>
-  ));
+  const resumeElements = resume
+    .sort((a, b) => {
+      return a.order - b.order;
+    })
+    .map((item, key) => (
+      <ResumeExperiences
+        key={key}
+        position={item.position}
+        jobDescription={item.jobDescription}
+        companyName={item.companyName}
+        from={item.from}
+        to={item.to}
+        companyLogoUrl={item.companyLogoUrl}
+        customWidth={item.width}
+      ></ResumeExperiences>
+    ));
 
   return (
-    <section className="bg-black">
+    <section className="bg-black pb-0">
       <Container>
         <SectionHeadings
           tagline="Education & Experience"
@@ -67,6 +38,7 @@ const Resume = (props) => {
           <div className="flex flex-wrap -mx-4">{resumeElements}</div>
         </div>
       </Container>
+      <div className="bottom-divider-diagonal"></div>
     </section>
   );
 };
