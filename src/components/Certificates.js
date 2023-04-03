@@ -1,5 +1,5 @@
-import { Container, Card } from "../UI";
-import SectionHeadings from "./SectionHeadings";
+import { Container, SectionHeadings } from "../UI";
+import { CatalogRow } from "../components/index";
 
 const Certificates = () => {
   const arrayCertificates = [
@@ -77,24 +77,7 @@ const Certificates = () => {
     }
   ];
 
-  const certificateItems = arrayCertificates.map((item) => (
-    <div
-      key={item.id}
-      className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4"
-    >
-      <Card
-        id={item.id}
-        className=""
-        imageSrc={item.imageSrc}
-        title={item.title}
-        description={null}
-        tags={item.tags}
-        gradientProperty={item.gradientProperty}
-        repoLink={null}
-        websiteLink={null}
-      />
-    </div>
-  ));
+  const certificateItems = <CatalogRow data={arrayCertificates} />;
 
   return (
     <section className="bg-black1 pb-0">

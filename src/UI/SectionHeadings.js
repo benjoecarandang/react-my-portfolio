@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { SectionRibbonTitle } from "../UI";
+import { SectionRibbonTitle } from ".";
 import tw, { styled } from "twin.macro";
 
 const SectionHeadings = (props) => {

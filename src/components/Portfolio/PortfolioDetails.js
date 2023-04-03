@@ -1,6 +1,4 @@
-import React from "react";
-import Container from "../../UI/Container";
-import SectionHeadings from "../SectionHeadings";
+import {Container, SectionHeadings} from "../../UI";
 import { useParams } from "react-router-dom"
 
 const PortfolioDetails = (props) => {

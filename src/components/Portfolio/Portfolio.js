@@ -1,29 +1,11 @@
-import Container from "../../UI/Container";
-import Card from "../../UI/Card";
-import SectionHeadings from "../SectionHeadings";
+import { Container, SectionHeadings } from "../../UI";
 import { useAppContext } from "../context/app-context";
+import { CatalogRow } from "../../components/index";
 
-const Portfolio = (props) => {
-  const {portfolio} = useAppContext()
+const Portfolio = () => {
+  const { portfolio } = useAppContext();
 
-  const portfolioElements = portfolio.map((item, key) => (
-    <div
-      key={key}
-      className="flex justify-center w-full md:basis-1/2 lg:basis-1/3 px-4"
-    >
-      <Card
-        id={item.id}
-        className=""
-        imageSrc={item.imageSrc}
-        title={item.title}
-        description={item.description}
-        tags={item.tags}
-        gradientProperty={item.gradientProperty}
-        repoLink={item.repoLink}
-        websiteLink={item.websiteLink}
-      />
-    </div>
-  ));
+  const portfolioElements = <CatalogRow data={portfolio} />;
 
   return (
     <section className="bg-black1 py-0">

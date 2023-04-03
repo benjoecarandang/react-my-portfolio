@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro";
 const ResumeExperiences = (props) => {
   const { position, jobDescription, companyLogoUrl, companyName, from, to, customWidth } =
     props;
-  const customClass = position === "left" ? "justify-end" : "";
+  const customClass = position === "left" ? "lg:justify-end" : "";
   const customImageSize = customWidth ? customWidth : '6';
   return (
     <Fragment>
