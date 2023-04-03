@@ -6,6 +6,7 @@ import PortfolioDetails from "./Portfolio/PortfolioDetails";
 import Resume from "./Resume/Resume";
 import Certificates from "./Certificates";
 import Footer from "./Footer";
+import CatalogRow from "./CatalogRow";
 
 export {
   Hero,
@@ -15,5 +16,6 @@ export {
   Resume,
   Certificates,
   Footer,
-  PortfolioDetails
+  PortfolioDetails,
+  CatalogRow
 };

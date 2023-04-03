@@ -2,6 +2,11 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  safelist: [
+    'w-6',
+    'w-10',
+    'w-16'
+  ],
   theme: {
     extend: {
       colors: {

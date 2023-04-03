@@ -1,5 +1,5 @@
 import Container from "../UI/Container";
-import SectionHeadings from "./SectionHeadings";
+import {SectionHeadings} from "../UI";
 
 const AboutMe = (props) => {
   const description = (

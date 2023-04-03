@@ -20,7 +20,7 @@ const FullPageSpinner = () => {
       <h2 className="text-center text-white text-xl font-semibold">
         Loading...
       </h2>
-      <p className="w-1/3 text-center text-white">
+      <p className="w-8/12 text-center text-white">
         This may take a few seconds, please don't close this page.
       </p>
     </div>

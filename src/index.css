@@ -4,12 +4,17 @@
 
 @layer base {
   html {
-    font-family: 'Open Sans', system-ui, sans-serif;
+    font-family: "Open Sans", system-ui, sans-serif;
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Catamaran', system-ui, sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Catamaran", system-ui, sans-serif;
     font-weight: 700;
     @apply text-neutral-50;
   }
@@ -28,11 +33,11 @@
   }
 
   .theme-gradient-1 {
-    background-image: linear-gradient(90deg,#ffffff1c 0%,#23202a 100%);
+    background-image: linear-gradient(90deg, #ffffff1c 0%, #23202a 100%);
   }
 
   .theme-gradient-2 {
-    background-image: linear-gradient(90deg,#ffffff1c 0%,#27262f 100%);
+    background-image: linear-gradient(90deg, #ffffff1c 0%, #27262f 100%);
   }
 
   .bottom-divider-diagonal {
@@ -51,4 +56,9 @@
     z-index: 1;
     transform: rotateX(180deg);
   }
+}
+
+.catalog-row-list-area:hover .navigate-right,
+.catalog-row-list-area:hover .navigate-left {
+  opacity: 1 !important;
 }

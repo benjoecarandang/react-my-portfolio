@@ -1,8 +1,7 @@
 import ResumeExperiences from "./ResumeExperiences";
-import { Container } from "../../UI";
-import SectionHeadings from "../SectionHeadings";
-import tw, { styled } from "twin.macro";
+import { Container, SectionHeadings } from "../../UI";
 import { useAppContext } from "../context/app-context";
+import tw, { styled } from "twin.macro";
 
 const Resume = () => {
   const { resume } = useAppContext();
