@@ -18,11 +18,12 @@ const CatalogRow = ({ data, movie_card_width = 430 }) => {
         gradientProperty={item.gradientProperty}
         repoLink={item.repoLink}
         websiteLink={item.websiteLink}
+        key={key}
       />
     );
   });
 
-  const [scrolX, setScrollX] = useState(-400);
+  const [scrolX, setScrollX] = useState(0);
   let listW = slides.length * movie_card_width;
 
   const handleLeftArrow = () => {

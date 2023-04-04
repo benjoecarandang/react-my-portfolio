@@ -1,14 +1,23 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  Hero,
-  Header,
-  AboutMe,
-  Portfolio,
-  Resume,
-  Certificates,
-  Footer,
-  PortfolioDetails
-} from "./index";
+import { Header, Footer, PortfolioDetails } from "./index";
+
+const Hero = lazy(() =>
+  import("./index").then((module) => ({ default: module.Hero }))
+);
+const AboutMe = lazy(() =>
+  import("./index").then((module) => ({ default: module.AboutMe }))
+);
+const Portfolio = lazy(() =>
+  import("./index").then((module) => ({ default: module.Portfolio }))
+);
+const Resume = lazy(() =>
+  import("./index").then((module) => ({ default: module.Resume }))
+);
+const Certificates = lazy(() =>
+  import("./index").then((module) => ({ default: module.Certificates }))
+);
+
 const UnauthenticatedApp = () => {
   return (
     <>

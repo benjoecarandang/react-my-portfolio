@@ -86,7 +86,7 @@ const Certificates = () => {
           className="items-center lg:items-start text-center lg:text-left"
           tagline="Achievements"
           title="My Certificates"
-          description=""
+          description={[null]}
         />
 
         <div className="relative">
