@@ -81,7 +81,7 @@ const CatalogRow = ({ data, movie_card_width = 430 }) => {
 }
 
 const StyledNavigationArrows = styled.div(({ position }) => [
-  tw`absolute flex items-center w-10 h-full justify-center bg-black bg-opacity-60 cursor-pointer opacity-0 z-50 transition-all
+  tw`absolute flex items-center w-10 h-full justify-center bg-black bg-opacity-80 cursor-pointer opacity-0 z-50 transition-all
 `,
   position === "right" ? tw`right-0 top-0` : tw`left-0 top-0`
 ]);
