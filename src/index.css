@@ -24,7 +24,7 @@
   }
 
   p {
-    @apply text-neutral-400 font-medium text-base leading-7;
+    @apply text-neutral-400 font-medium text-base leading-7 mb-4;
   }
 
   section {

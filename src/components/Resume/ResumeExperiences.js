@@ -22,12 +22,12 @@ const ResumeExperiences = (props) => {
                 alt={companyName}
               />
             )}
-            <p className="text-neutral-400 font-medium leading-6">
+            <p className="text-neutral-400 font-medium leading-6 mb-0">
               {companyName}
             </p>
           </div>
           <StyledDate>
-            {from} - {to}
+            {from} to {to}
           </StyledDate>
         </StyledResumeContainer>
       </div>
