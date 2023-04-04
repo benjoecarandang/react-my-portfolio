@@ -1,12 +1,7 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo
-} from "react";
-import { useAsync } from "../hooks/use-async";
+import { createContext, useContext, useEffect, useMemo } from "react";
 import { client } from "../utils/api-client";
-import FullPageSpinner from "../../UI/FullPageSpinner";
+import { FullPageSpinner } from "../../UI";
+import { useQuery } from "react-query";
 
 const AppContext = createContext();
 AppContext.displayName = "AuthContext";
@@ -14,6 +9,7 @@ AppContext.displayName = "AuthContext";
 const bootstrapAppData = async () => {
   const portfolio = await client("projects.json");
   const resume = await client("resume.json");
+
   return {
     portfolio: portfolio,
     resume: resume
@@ -22,26 +18,19 @@ const bootstrapAppData = async () => {
 
 const AppProvider = (props) => {
   const {
-    data,
+    data: appData,
     status,
-    error,
     isLoading,
     isIdle,
     isError,
     isSuccess,
-    run,
-    setData
-  } = useAsync();
+    error
+  } = useQuery({
+    queryKey: ["portfolio"],
+    queryFn: () => bootstrapAppData()
+  });
 
-  useEffect(() => {
-    run(bootstrapAppData());
-  }, [run]);
-
-  // const getPortfolio = useCallback(() => {
-  //   authProvider.getPortfolio();
-  // }, []);
-
-  const value = useMemo(() => (data), [data]);
+  const value = useMemo(() => appData, [appData]);
 
   if (isLoading || isIdle) {
     return <FullPageSpinner />;

@@ -3,7 +3,15 @@ import { SectionRibbonTitle } from ".";
 import tw, { styled } from "twin.macro";
 
 const SectionHeadings = (props) => {
-  const { tagline, className, gradientClass, description, title } = props;
+  const {
+    tagline,
+    className,
+    gradientClass,
+    description = [],
+    title,
+    textEnder = null
+  } = props;
+
   return (
     <div
       className={twMerge(
@@ -17,10 +25,20 @@ const SectionHeadings = (props) => {
       </SectionRibbonTitle>
       <h2 className="text-5xl mb-5">{title}</h2>
 
-      {description && <StyledDescription>{description}</StyledDescription>}
+      <StyledDescription>
+        {description.map((item, key) => (
+          <p key={key}>{item}</p>
+        ))}
+
+        {textEnder && (
+          <p className=" text-lg italic font-bold text-neutral-200 tracking-wide">
+            {textEnder}
+          </p>
+        )}
+      </StyledDescription>
     </div>
   );
 };
 
-const StyledDescription = styled.p(tw`mb-10 w-full lg:w-9/12 leading-7`);
+const StyledDescription = styled.div(tw`mb-10 w-full lg:w-9/12 leading-7`);
 export default SectionHeadings;

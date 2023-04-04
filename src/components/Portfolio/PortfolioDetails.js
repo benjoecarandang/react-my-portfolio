@@ -13,7 +13,7 @@ const PortfolioDetails = (props) => {
           <SectionHeadings
             tagline="Portfolio"
             title="Virtuallio Time Tracker"
-            description={'Akoy isang tanga!!'}
+            description={[null]}
           />
 
 					<h1 className="text-white">
